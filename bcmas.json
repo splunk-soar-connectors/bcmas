@@ -12,7 +12,7 @@
     "product_vendor": "Symantec",
     "product_name": "Malware Analysis Service",
     "product_version_regex": ".*",
-    "min_phantom_version": "2.0.264",
+    "min_phantom_version": "2.2.44",
     "logo": "symantec.png",
     "configuration": {
       "url": {
@@ -34,7 +34,7 @@
         "order": 3
       },
       "api_key": {
-        "data_type": "string",
+        "data_type": "password",
         "description": "API Key",
         "required": false,
         "order": 1
