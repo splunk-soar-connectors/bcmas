@@ -1,7 +1,7 @@
 {
     "appid": "9c7fd282-503a-4694-9e0f-597a30709f0a",
     "name": "Malware Analysis Service",
-    "description": "Integrate with Malware Analysis Service (MAS) to execute actions like <b>detonate file</b> and <b>get report</b>",
+    "description": "Integrate with Malware Analysis Service (MAS) to execute actions like detonate file and get report",
     "publisher": "Phantom",
     "package_name": "phantom_mas",
     "type": "sandbox",
@@ -12,7 +12,7 @@
     "product_vendor": "Symantec",
     "product_name": "Malware Analysis Service",
     "product_version_regex": ".*",
-    "min_phantom_version": "2.2.44",
+    "min_phantom_version": "3.0.247",
     "logo": "symantec.png",
     "configuration": {
       "url": {
