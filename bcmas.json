@@ -67,7 +67,7 @@
         },
         {
             "action": "detonate file",
-            "description": "Run the file in the Malware Analysis Service instance and, if possible, retrieve the analysis results",
+            "description": "Run the file in the Malware Analysis Service instance and retrieve the analysis results if possible",
             "verbose": "<p>This action requires the input file to be present in the vault.<br><br>The action will wait up to the timeout (set in asset configuration) for the detonation to complete. If the detonation does not complete before the timeout, use <b>get report</b> to get the final result of the detonation. Some things to note:<ul><li>The <b>environment</b> parameter can have the values <i>IntelliVM</i>, <i>SandBox</i>, or <i>Mobile IntelliVM</i>.</li><li>The <b>priority</b> parameter can have the values <i>high</i>, <i>medium</i>, or <i>low</i>.</li><li>The <b>profile</b> parameter only applies if the <b>environment</b> parameter is set to <i>IntelliVM</i>.</li><li>The <b>owner</b> parameter defaults to the asset's <b>username</b> parameter if it is set. If the asset <b>username</b> parameter is not set, the <b>owner</b> is required</li></ul></p>",
             "type": "investigate",
             "identifier": "detonate_file",
@@ -114,10 +114,10 @@
                     "default": "high"
                 },
                 "source": {
-                    "description": "Source of the file to detonate (defaults to Phantom)",
+                    "description": "Source of the file to detonate (defaults to www)",
                     "data_type": "string",
-                    "required": true,
-                    "default": "Phantom",
+                    "required": false,
+                    "default": "www",
                     "order": 4
                 },
                 "label": {
@@ -321,9 +321,7 @@
                 },
                 {
                     "data_path": "action_result.data.*.results.*.tasks_owner_risk_score",
-                    "data_type": "numeric",
-                    "column_name": "Risk Score",
-                    "column_order": 2
+                    "data_type": "numeric"
                 },
                 {
                     "data_path": "action_result.data.*.results.*.environments_host_label",
@@ -331,7 +329,9 @@
                 },
                 {
                     "data_path": "action_result.data.*.results.*.tasks_global_risk_score",
-                    "data_type": "numeric"
+                    "data_type": "numeric",
+                    "column_name": "Risk Score",
+                    "column_order": 2
                 },
                 {
                     "data_path": "action_result.data.*.results.*.task_properties.*.task_properties_name",
@@ -646,9 +646,7 @@
                 },
                 {
                     "data_path": "action_result.data.*.results.*.tasks_owner_risk_score",
-                    "data_type": "numeric",
-                    "column_name": "Risk Score",
-                    "column_order": 1
+                    "data_type": "numeric"
                 },
                 {
                     "data_path": "action_result.data.*.results.*.environments_host_label",
@@ -656,7 +654,9 @@
                 },
                 {
                     "data_path": "action_result.data.*.results.*.tasks_global_risk_score",
-                    "data_type": "numeric"
+                    "data_type": "numeric",
+                    "column_name": "Risk Score",
+                    "column_order": 1
                 },
                 {
                     "data_path": "action_result.data.*.results.*.task_properties.*.task_properties_name",

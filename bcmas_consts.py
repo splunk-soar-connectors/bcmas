@@ -12,7 +12,7 @@
 #
 # --
 
-BCMAS_ERR_FROM_SERVER = "Got an unknwon error"
+BCMAS_ERR_FROM_SERVER = "Got an unknown error"
 BCMAS_ERR_SERVER_CONNECTION = "Could not connect to the configured URL"
 BCMAS_ERR_NOT_IN_VAULT = "Could not find specified vault ID in the vault"
 
