@@ -61,7 +61,7 @@ class BCMASConnector(BaseConnector):
 
         try:
             response = method(self._base_url + endpoint,
-                    params={'token': self._api_key},
+                    headers={'X-API-TOKEN': self._api_key},
                     data=body,
                     files=files,
                     verify=config.get('verify_server_cert', True))
@@ -141,13 +141,13 @@ class BCMASConnector(BaseConnector):
             self.save_progress(action_result.get_message())
             return action_result.set_status(phantom.APP_ERROR, "Test connectivity failed")
 
-        ret_val, resp_json = self._make_rest_call(action_result, 'auth/sessions', method=requests.get)
+        ret_val, resp_json = self._make_rest_call(action_result, 'tasks', method=requests.get)
 
         if (not ret_val):
             self.save_progress(action_result.get_message())
             return action_result.set_status(phantom.APP_ERROR, "Test connectivity failed")
 
-        if ('GET /auth/sessions' != resp_json.get('request')):
+        if ('GET /tasks' != resp_json.get('request')):
             self.save_progress(BCMAS_ERR_FROM_SERVER)
             return action_result.set_status(phantom.APP_ERROR, "Test connectivity failed")
 
@@ -289,7 +289,7 @@ class BCMASConnector(BaseConnector):
 
         summary = {}
         summary['task_status'] = resp_json.get('results', [{}])[0].get('task_state_state', 'UNKNOWN_STATE')
-        summary['risk_score'] = resp_json.get('results', [{}])[0].get('tasks_owner_risk_score', 'UNKNOWN_STATE')
+        summary['risk_score'] = resp_json.get('results', [{}])[0].get('tasks_global_risk_score', 'UNKNOWN_STATE')
         action_result.set_summary(summary)
 
         return phantom.APP_SUCCESS
@@ -315,7 +315,7 @@ class BCMASConnector(BaseConnector):
 
         summary = {}
         summary['task_status'] = resp_json.get('results', [{}])[0].get('task_state_state', 'UNKNOWN_STATE')
-        summary['risk_score'] = resp_json.get('results', [{}])[0].get('tasks_owner_risk_score', 'UNKNOWN_STATE')
+        summary['risk_score'] = resp_json.get('results', [{}])[0].get('tasks_global_risk_score', 'UNKNOWN_STATE')
         action_result.set_summary(summary)
 
         return action_result.set_status(phantom.APP_SUCCESS, "Report successfully retrieved")
