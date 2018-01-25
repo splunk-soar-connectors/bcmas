@@ -5,7 +5,7 @@
     "publisher": "Phantom",
     "package_name": "phantom_mas",
     "type": "sandbox",
-    "license": "Copyright (c) Phantom Cyber Corporation 2017",
+    "license": "Copyright (c) Phantom Cyber Corporation, 2017-2018",
     "main_module": "bcmas_connector.pyc",
     "app_version": "1.0.14",
     "utctime_updated": "2017-12-21T22:39:08.000000Z",
