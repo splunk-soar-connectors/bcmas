@@ -15,18 +15,18 @@
 #
 #
 # Phantom App imports
+import time
+
 import phantom.app as phantom
-from phantom.vault import Vault
+import requests
+import simplejson as json
+from lxml import etree
 from phantom.action_result import ActionResult
 from phantom.base_connector import BaseConnector
+from phantom.vault import Vault
 
 # Imports local to this App
 from bcmas_consts import *
-
-from lxml import etree
-import simplejson as json
-import requests
-import time
 
 
 # Define the App Class
@@ -344,6 +344,7 @@ class BCMASConnector(BaseConnector):
 if __name__ == '__main__':
 
     import sys
+
     # import pudb
     # pudb.set_trace()
 
