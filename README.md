@@ -2,7 +2,7 @@
 # Malware Analysis Service
 
 Publisher: Phantom  
-Connector Version: 1.0.20  
+Connector Version: 1.0.21  
 Product Vendor: Symantec  
 Product Name: Malware Analysis Service  
 Product Version Supported (regex): ".\*"  
